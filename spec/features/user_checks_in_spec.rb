@@ -31,16 +31,15 @@ feature 'user checks in', %Q{
 	  fill_in "user_password", with: user.password
 	  click_on "Log in"
 
- save_and_open_page
-
 	  expect(page).to have_content "Boston"
 
 	  click_on "Boston"
 
-	  fill_in "Check In", with: "12345678"
+	  fill_in "Tag ID", with: "12345678"
 
-	  expect(page).to have_content "signed in successfully"
+	  click_on "Check In"
 
+	  expect(page).to have_content "You have checked in"
 			
 		end
 

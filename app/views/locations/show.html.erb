@@ -1,7 +1,8 @@
 <p> Welcome to <%= @location.name %>! Please sign in </p>
-
-<%= form_for @checkin do |f| %>
-  <div>
-    <%= f.label :checkin %>
-    <%= f.text_field :checkin %>
-  </div>
+<div>
+	<%= form_for ([@location, @event]) do |f| %>
+	  <%= f.label :tag_id, "Tag ID" %>
+	  <%= f.text_field :tag_id, autofocus: :true %>
+		<%= f.submit "Check In" %>
+	<% end %>
+</div>

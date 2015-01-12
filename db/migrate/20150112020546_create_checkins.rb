@@ -1,13 +1,13 @@
-class CreateCheckins < ActiveRecord::Migration
+class CreateUserCheckins < ActiveRecord::Migration
   def up
-    create_table :checkins do |t|
-    	t.integer :location_id
+    create_table :usercheckins do |t|
     	t.integer :user_id
+    	t.integer :location_id
     	t.timestamps
     end
   end
 
   def down
-  	drop_table :checkins
+  	drop_table :usercheckins
   end
 end

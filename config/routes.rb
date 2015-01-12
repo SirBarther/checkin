@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
-  resources :locations do
+  resources :locations, only: [:new, :index, :show] do
+    resources :events, only: [:index, :show, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
