@@ -1,4 +1,4 @@
-class LocationController < ApplicationController
+class LocationsController < ApplicationController
   def index
   end
 
@@ -7,6 +7,7 @@ class LocationController < ApplicationController
   end
 
   def show
+  	@location = Location.find(params[:id])
   end
 
 end

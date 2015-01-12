@@ -1,4 +1,8 @@
-<p>
-  Modify me in `app/views/homes/index.html.erb` or change the root directive in
-  `config/routes.rb`
-</p>
+<p>Welcome to The Jae Hun Kim Taekwon-Do Institute</p>
+<p>Please select a location</p>
+
+<ul>
+	<% @locations.each do |location| %>
+	<%= link_to location.name, locations_path(location) %>
+	<% end %>
+</ul>

@@ -1,0 +1,7 @@
+<p> Welcome to <%= @location.name %>! Please sign in </p>
+
+<%= form_for @checkin do |f| %>
+  <div>
+    <%= f.label :checkin %>
+    <%= f.text_field :checkin %>
+  </div>

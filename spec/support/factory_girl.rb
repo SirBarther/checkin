@@ -6,5 +6,12 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
   end
+end
 
+FactoryGirl.define do
+	factory :location do
+		sequence(:city) {|n| "City #{n}"}
+		sequence(:state) {|n| "State #{n}"}
+		country "USA"
+	end
 end

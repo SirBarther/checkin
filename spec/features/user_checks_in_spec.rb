@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-feature "user checks in", %{
+feature 'user checks in', %Q{
 
 	User Story:
 
@@ -18,25 +18,30 @@ feature "user checks in", %{
 
 } do
 
-	context "authenticated user" do
-    before(:each) do
-    	
-			visit root_path
+		scenario "User checks in" do 
 
-		  click_on "Sign In"
+		user = FactoryGirl.create(:user)
+		location = FactoryGirl.create(:location, name: "Boston")
 
-		  fill_in "Login", with: "boston@boston.com"
-		  fill_in "Password", with: "Test1234"
-		  click_on "Log in"
-
-		end
-		
 		visit root_path
 
+	  click_on "Sign In"
+
+	  fill_in "user_email", with: user.email
+	  fill_in "user_password", with: user.password
+	  click_on "Log in"
+
+ save_and_open_page
+
 	  expect(page).to have_content "Boston"
+
+	  click_on "Boston"
 
 	  fill_in "Check In", with: "12345678"
 
 	  expect(page).to have_content "signed in successfully"
-	end
+
+			
+		end
+
 end
