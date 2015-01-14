@@ -8,8 +8,10 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @students = []
   	@location = Location.find(params[:id])
   	@event = Event.new
+    @tag = self.try(:tag)
   end
 
 end

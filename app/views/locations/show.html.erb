@@ -1,8 +1,25 @@
 <p> Welcome to <%= @location.name %>! Please sign in </p>
+
 <div>
 	<%= form_for ([@location, @event]) do |f| %>
-	  <%= f.label :tag_id, "Tag ID" %>
-	  <%= f.text_field :tag_id, autofocus: :true %>
+	  <%= f.label :student_tag, "Tag Number" %>
+	  <%= f.text_field :student_tag, autofocus: :true %>
 		<%= f.submit "Check In" %>
 	<% end %>
 </div>
+
+<div id="error_explanation">
+<% if @event.errors.any? %>
+<h4><%= pluralize(@event.errors.count, "error") %>: Please review </h4>
+<ul>
+  <% @event.errors.full_messages.each do |message| %>
+  <li> <%= message %> </li>
+  <% end %>
+</ul>
+<% end %>
+</div>
+
+<% Event.list.each do |student| %>
+		<%= student.f_name %>
+<% end %>
+

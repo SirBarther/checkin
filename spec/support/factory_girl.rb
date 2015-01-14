@@ -15,3 +15,19 @@ FactoryGirl.define do
 		country "USA"
 	end
 end
+
+# FactoryGirl.define do
+# 	factory :student do
+# 		sequence(:f_name) {|n| "First Name #{n}"}
+# 		sequence(:l_name) {|n| "Last Name #{n}"}
+# 		sequence(:tag) {|n| "1234567#{n}"}
+# 	end
+# end
+
+FactoryGirl.define do
+	factory :student do
+		f_name { Faker::Name.first_name }
+		l_name { Faker::Name.first_name }
+		tag { Faker::Number.number(8) }
+	end
+end

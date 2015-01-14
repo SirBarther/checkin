@@ -1,9 +1,9 @@
 class ChangeCheckinsName < ActiveRecord::Migration
   def up
-  	rename_table :checkins, :events
+  	rename_table :usercheckins, :events
   end
 
   def down
-  	rename_table :events, :checkins
+  	rename_table :events, :usercheckins
   end
 end

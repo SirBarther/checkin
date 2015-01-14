@@ -20,22 +20,16 @@ feature 'user checks in', %Q{
 
 		scenario "User checks in" do 
 
-		user = FactoryGirl.create(:user)
+		user = FactoryGirl.create(:student)
 		location = FactoryGirl.create(:location, name: "Boston")
 
 		visit root_path
-
-	  click_on "Sign In"
-
-	  fill_in "user_email", with: user.email
-	  fill_in "user_password", with: user.password
-	  click_on "Log in"
 
 	  expect(page).to have_content "Boston"
 
 	  click_on "Boston"
 
-	  fill_in "Tag ID", with: "12345678"
+	  fill_in "Tag Number", with: user.tag
 
 	  click_on "Check In"
 
@@ -43,4 +37,22 @@ feature 'user checks in', %Q{
 			
 		end
 
-end
+		scenario "User enters invalid Tag ID" do
+
+		location = FactoryGirl.create(:location, name: "Boston")
+		student = FactoryGirl.create(:student)
+
+		visit root_path
+
+		click_on "Boston"
+
+		fill_in "Tag Number", with: "99999999"
+
+		click_on "Check In"
+
+		expect(page).to have_content "The provided ID doesn't exist or is blank. Please register"
+
+		expect(page).to have_content "Please sign in"
+
+		end
+	end

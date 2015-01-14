@@ -1,16 +1,31 @@
 class Event < ActiveRecord::Base
-	has_many :locations
-	belongs_to :users
-	accepts_nested_attributes_for :locations
+	belongs_to :location
+	belongs_to :student
 
-	validates :tag_id, length: { is: 8 }, uniqueness: true
+	validates :student_tag, length: { is: 8, message: "Must be 8 numbers" }, presence: true
 	validates :location_id, presence: true
 
-	def new
-		binding.pry
+  def tag=(t_id)
+    @student = Student.find_by(tag: t_id)
+  end
+
+  def tag
+  	student.try(:tag)
+  end
+
+  def new
 	end
 
 	def create
-		binding.pry
 	end
+
+  def self.list
+    @student_array = []
+    Event.limit(5).order(:created_at).each do |list|
+      @student_array << Student.find_by_tag(list.student_tag)
+      # @student_array << list.student
+    end
+    @student_array
+  end
+
 end

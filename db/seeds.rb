@@ -9,3 +9,4 @@
 Location.create(name: "Boston", city: "Boston", state: "MA", country: "USA")
 Location.create(name: "Quincy", city: "Quincy", state: "MA", country: "USA")
 Location.create(name: "Cambridge", city: "Boston", state: "MA", country: "USA")
+

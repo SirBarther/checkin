@@ -1,4 +1,4 @@
 class Location < ActiveRecord::Base
-	belongs_to :events
-	has_many :users, through: :events
+	has_many :events
+	has_many :students, through: :events
 end
