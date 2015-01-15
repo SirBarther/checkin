@@ -1,8 +1,13 @@
-<p>Welcome to The Jae Hun Kim Taekwon-Do Institute</p>
 <p>Please select a location</p>
 
-<ul>
+<div> 
+	<p>Or select an existing location to begin</p>
+</div>
+
+<div>
+	<ul>
 	<% @locations.each do |location| %>
 	<%= link_to location.name, location_path(location) %>
 	<% end %>
-</ul>
+	</ul>
+</div>

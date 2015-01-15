@@ -4,21 +4,21 @@ feature 'user checks in', %Q{
 
 	User Story:
 
-	As a signed up user
+	As a student
 	I want to check in to a location
- 	So that I can track my attendance
+ 	So that my attendance can be tracked
 
  	Acceptance Criteria:
 
- 	[] - The location account must be signed in
- 	[] - I must see a confirmation message
- 	[] - The page is refreshed and reflects my checkin
- 	[] - I can see other recent checkins
- 	[] - If there is an error I am asked to try again
+ 	[X] - The location must be selected
+ 	[X] - I must enter valid credentials
+ 	[X] - I must see confirmation and error messages respectively
+ 	[X] - The page is refreshed and I can see my attendance record
+ 	[X] - I can see other attenance records
 
 } do
 
-		scenario "User checks in" do 
+		scenario "Student checks in" do 
 
 		user = FactoryGirl.create(:student)
 		location = FactoryGirl.create(:location, name: "Boston")
@@ -37,10 +37,10 @@ feature 'user checks in', %Q{
 			
 		end
 
-		scenario "User enters invalid Tag ID" do
+		scenario "Student enters an invalid credential" do
 
-		location = FactoryGirl.create(:location, name: "Boston")
 		student = FactoryGirl.create(:student)
+		location = FactoryGirl.create(:location, name: "Boston")
 
 		visit root_path
 

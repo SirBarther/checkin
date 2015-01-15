@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  
   root 'homes#index'
   devise_for :users
 
-  resources :locations, only: [:new, :index, :show] do
+  resources :students, only: [:index, :show]
+
+  resources :locations, only: [:index, :show] do
     resources :events, only: [:index, :show, :create]
+  end
+
+  namespace :admin do
+    get "/", to: "dashboards#show"
+    resources :users, only: [:index, :show]
+    resources :students, only: [:index, :show, :new, :create]
+    resources :locations, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
