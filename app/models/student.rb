@@ -1,4 +1,7 @@
 class Student < ActiveRecord::Base
+	include PgSearch
+	multisearchable against: [:f_name, :l_name, :tag]
+
 	has_many :events
 	has_many :locations, through: :events
 
@@ -14,5 +17,13 @@ class Student < ActiveRecord::Base
 						presence: true,
             length: { is: 8 },
             uniqueness: true
+
+  def self.search(search)
+    if !search.nil? && !search.blank?
+      Student.where("f_name LIKE ?", "%#{search}%")
+    else
+      Student.all
+    end
+  end
 
 end

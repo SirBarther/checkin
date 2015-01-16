@@ -1,5 +1,17 @@
-<h1>admin/students/index</h1>
+<h1>Student Search</h1>
 
 <% @students.each do |list| %>
   <%= list.f_name %>
+<% end %>
+
+
+<%= form_tag admin_students_path, method: 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% @searched_students.each do |student| %>
+  <div>
+    <h4><%= link_to student.f_name, admin_student_path(student) %></h4>
+  </div>
 <% end %>

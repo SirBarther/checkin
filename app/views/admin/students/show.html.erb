@@ -1,0 +1,24 @@
+
+<%= form_for @student do |f| %>
+	<div>
+		<%= f.label :f_name %>
+		<%= f.text_field :f_name %>
+	</div>
+	<div>
+		<%= f.label :l_name %>
+		<%= f.text_field :l_name %>
+	</div>
+	<div>
+		<%= f.label :tag %>
+		<%= f.text_field :tag %>
+	</div>
+	<div>
+	  <%= f.submit "Submit" %>
+	</div>
+<% end %>
+
+<div>
+<%= button_to "Delete this student", admin_student_path(@student), 
+		confirm: "Are you sure?", 
+		method: :delete %>
+</div>

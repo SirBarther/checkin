@@ -8,8 +8,18 @@ module Admin
       end
     end
 
+    def show
+      @student = Student.find(params[:id])
+    end
+
     def index
       @students = Student.all
+      # @searched_students = Student.search(params[:search])
+      if params[:search]
+        @searched_students = Student.search(params[:search]).order("created_at DESC")
+      else
+        @searched_students = Student.order("created_at DESC")
+      end
     end
 
     def new
