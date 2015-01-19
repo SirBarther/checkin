@@ -1,0 +1,50 @@
+require 'rails_helper'
+
+feature "Administrator creates a Student", %Q{
+
+	User Story:
+
+	As an administrator
+	I want to create a new location
+ 	So that students can check in
+
+ 	Acceptance Criteria:
+
+ 	[X] - I must be authenticated
+ 	[X] - I receive a confirmation message upon success
+ 	[X] - I receive error messages if there are any blank fields
+ 	[X] - Upon success I am redirected to the root index
+
+} do
+
+		scenario "Admin successfully creates a new location" do
+			user = FactoryGirl.create(:user)
+			location = FactoryGirl.create(:location)
+
+			visit root_path
+
+			click_on "Sign In"
+
+			fill_in "Email", with: user.email
+			fill_in "Password", with: user.password
+
+			click_button "Log in"
+
+			expect(page).to have_content "Signed in successfully."
+
+			click_on "Admin"
+
+			click_on "View or edit locations"
+
+			click_on "Create a new location"
+
+			fill_in "City", with: location.city
+			fill_in "State", with: location.state
+			fill_in "Country", with: location.country
+
+			click_on "Submit"
+
+			expect(page).to have_content "You have successfully created a new location"
+
+		end
+	end

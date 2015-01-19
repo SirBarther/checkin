@@ -1,5 +1,5 @@
 
-<%= form_for @student do |f| %>
+<%= form_for @student, url: admin_student_path do |f| %>
 	<div>
 		<%= f.label :f_name %>
 		<%= f.text_field :f_name %>
@@ -18,7 +18,7 @@
 <% end %>
 
 <div>
-<%= button_to "Delete this student", admin_student_path(@student), 
-		confirm: "Are you sure?", 
+<%= button_to "Delete this student", admin_student_path(@student),
+		confirm: "Are you sure?",
 		method: :delete %>
 </div>

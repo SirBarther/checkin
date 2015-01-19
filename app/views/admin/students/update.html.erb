@@ -1,0 +1,17 @@
+<%= form_for @student, url: admin_student_path do |f| %>
+  <div>
+    <%= f.label :f_name %>
+    <%= f.text_field :f_name %>
+  </div>
+  <div>
+    <%= f.label :l_name %>
+    <%= f.text_field :l_name %>
+  </div>
+  <div>
+    <%= f.label :tag %>
+    <%= f.text_field :tag %>
+  </div>
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

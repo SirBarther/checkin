@@ -12,6 +12,17 @@ module Admin
       @student = Student.find(params[:id])
     end
 
+    def update
+      @student = Student.find(params[:id])
+      if @student.update_attributes(student_params)
+        flash[:notice] = "Student updated"
+        redirect_to admin_students_path
+      else
+        flash[:notice] = "There was an error with your request"
+        render admin_student_path
+      end
+    end
+
     def index
       @students = Student.all
       # @searched_students = Student.search(params[:search])
@@ -59,3 +70,5 @@ module Admin
     end
   end
 end
+
+

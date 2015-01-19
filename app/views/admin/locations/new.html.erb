@@ -1,0 +1,33 @@
+<%= form_for @new_location, url: admin_locations_path(@new_location) do |f| %>
+  <div>
+    <%= f.label :name, "Location Name" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :city, "City" %>
+    <%= f.text_field :city %>
+  </div>
+  <div>
+    <%= f.label :state, "State" %>
+    <%= f.text_field :state %>
+  </div>
+  <div>
+    <%= f.label :country, "Country" %>
+    <%= f.text_field :country %>
+  </div>
+  <div>  
+    <%= f.submit "Submit"%>
+  </div>
+<% end %>
+
+<% if @new_location.errors.any? %>
+	<div id="error_explanation">
+  <h5> The following errors(s) occurred: </h5> 	
+	<ul>
+	<% @new_location.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+	</div>
+<% end %>
+
