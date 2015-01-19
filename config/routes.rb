@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  get "/", to: 'homes#index'
   devise_for :users
 
   resources :students, only: [:index, :show]
