@@ -3,7 +3,6 @@
   <div id="wrapper">
     <body>
       <h3 id="main">Select a location</h3>
-        <ul id="main">
         <%= form_for @location, url: admin_location_path(@location) do |f| %>
           <div>
             <%= f.label :name, "Location Name" %>
@@ -25,8 +24,6 @@
             <%= f.submit "Submit"%>
           </div>
         <% end %>
-      </ul>
-
       <% if @location.errors.any? %>
         <div id="error_explanation">
         <h5> The following errors(s) occurred: </h5>

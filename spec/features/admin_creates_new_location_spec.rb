@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Administrator creates a Student", %Q{
+feature "Administrator creates a new location", %Q{
 
 	User Story:
 
@@ -13,7 +13,7 @@ feature "Administrator creates a Student", %Q{
  	[X] - I must be authenticated
  	[X] - I receive a confirmation message upon success
  	[X] - I receive error messages if there are any blank fields
- 	[X] - Upon success I am redirected to the root index
+ 	[X] - Upon success I am redirected to the locations index
 
 } do
 
@@ -46,5 +46,12 @@ feature "Administrator creates a Student", %Q{
 
 			expect(page).to have_content "You have successfully created a new location"
 
+		end
+
+		scenario "Unauthenticated user creates a new location" do
+
+			visit new_admin_location_path
+
+			expect(page).to have_content "You need to sign in or sign up before continuing."
 		end
 	end

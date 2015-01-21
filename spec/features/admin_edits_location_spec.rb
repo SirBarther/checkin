@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-feature "Administrator creates a Student", %Q{
+feature "Administrator edits a location", %Q{
 
   User Story:
 
   As an administrator
-  I want to create a new location
-  So that students can check in
+  I want to edit a location
+  So that my records are accurate
 
   Acceptance Criteria:
 
   [X] - I must be authenticated
   [X] - I receive a confirmation message upon success
   [X] - I receive error messages if there are any blank fields
-  [X] - Upon success I am redirected to the root index
+  [X] - Upon success I am redirected to the locations index
 
 } do
 

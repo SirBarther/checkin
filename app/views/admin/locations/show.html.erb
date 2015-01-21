@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <div id="wrapper">
-    <body>
-      <h3 id="main">Location</h3>
-        <ul id="main">
+<div id="wrapper">
+  <body>
+    <h3 id="main">Location</h3>
+      <div>
+        <ul id="location">
           <li> Name: <%= @location.name %> </li>
           <li> City: <%= @location.city %> </li>
           <li> State: <%= @location.state %> </li>
           <li> Country: <%= @location.country %> </li>
           <%= link_to "Edit", edit_admin_location_path %>
-    </body>
-  </div>
-</html>
+        </ul>
+      </div>
+  </body>
+</div>
+
 

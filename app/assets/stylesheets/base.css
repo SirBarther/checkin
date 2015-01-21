@@ -13,7 +13,6 @@ a li {
 #logo {
   margin: 0;
   padding: 0;
-
 }
 
 #generic {
@@ -44,13 +43,16 @@ Body wrapper
 Main settings
 ***********************/
 
-/* Locations Buttons LI */
 #main li a {
   background-color: #FFF;
   list-style: none;
 }
 
-/* Main Button Class for locations */
+#main ul {
+  margin-left: -1.1rem;
+}
+
+/* Main Button Class */
 .mainbutton {
     display: block;
     height: 50px;
@@ -61,7 +63,6 @@ Main settings
     background-color: white;
     box-shadow: 0 1px 0 #1b383b;
     color: #000;
-    /* text-shadow: 0 1px 1px #555;*/
 }
 
 /***********************
@@ -81,7 +82,7 @@ Top Bar area
 }
 
 .flash {
-  color: black;
+  color: white;
 }
 
 
@@ -91,8 +92,7 @@ Navigation
 nav ul {
   list-style: none;
   display: inline-block;
-  /*margin: 5% 5%;*/
-
+  margin-left: -1.1rem;
 }
 
 nav a {
@@ -148,6 +148,15 @@ Forms
   margin-right: auto;
 }
 
+.edit_location {
+  display: block;
+  max-width: 50%;
+  text-align: left;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /***********************
 Checkins Section
 ***********************/
@@ -157,7 +166,6 @@ Checkins Section
   background-color: #70C6FF;
   max-width: 52%;
   margin: 5px auto;
-
 }
 
 #checkins_list ul {
@@ -166,6 +174,7 @@ Checkins Section
   margin-left: auto;
   margin-right: auto;
   color: white;
+  margin-left: -1.1rem;
 }
 
 #checkins_list li {
@@ -175,7 +184,24 @@ Checkins Section
   background-color: #333333;
   margin-left: 0;
   margin-right: 0;
+}
 
+/***********************
+Locations
+***********************/
+#location {
+  color: white;
+
+}
+
+#location ul {
+  text-align: center;
+}
+
+#location li {
+  color: white;
+  list-style: none;
+  margin-left: -1.1rem;
 }
 
 /***********************
@@ -205,7 +231,7 @@ h2, h2:visited {
 }
 
 h3, h3:visited {
-  color: #DDD;
+  color: #FFF;
 }
 
 img {
