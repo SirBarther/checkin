@@ -34,9 +34,9 @@ feature "Administrator creates a Student", %Q{
 
 			click_on "Admin"
 
-			click_on "View or edit locations"
+			click_on "Locations"
 
-			click_on "Create a new location"
+			click_on "New Location"
 
 			fill_in "City", with: location.city
 			fill_in "State", with: location.state

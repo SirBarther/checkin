@@ -1,33 +1,38 @@
-<h1>admin/students/new</h1>
+<!DOCTYPE html>
+<html>
+  <div id="wrapper">
+    <%= form_for @new_student, url: admin_students_path(@new_student) do |f| %>
+      <div>
+      <%= f.label :f_name, "First Name" %>
+      <%= f.text_field :f_name %>
+      </div>
 
+      <div>
+      <%= f.label :l_name, "Last Name" %>
+      <%= f.text_field :l_name %>
+      </div>
 
-<%= form_for @new_student, url: admin_students_path(@new_student) do |f| %>
-  <div>
-    <%= f.label :f_name, "First Name" %>
-    <%= f.text_field :f_name %>
-  </div>
-  <div>
-    <%= f.label :l_name, "Last Name" %>
-    <%= f.text_field :l_name %>
-  </div>
-  <div>
-    <%= f.label :tag, "Tag Number" %>
-    <%= f.text_field :tag %>
-  </div>
-  <div>  
-    <%= f.submit "Submit"%>
-  </div>
-<% end %>
+      <div>
+      <%= f.label :tag, "Tag Number" %>
+      <%= f.text_field :tag %>
+      </div>
 
+      <div>
+      <%= f.submit "Submit"%>
+      </div>
 
-<% if @new_student.errors.any? %>
-	<div id="error_explanation">
-  <h5> The following errors(s) occurred: </h5> 	
-	<ul>
-	<% @new_student.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-	<% end %>
-	</ul>
-	</div>
-<% end %>
+    <% end %>
+
+    <div id="error_explanation">
+    <% if @new_student.errors.any? %>
+      <h5> The following errors(s) occurred: </h5>
+      <ul>
+      <% @new_student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      </div>
+    <% end %>
+  </div>
+</html>
 

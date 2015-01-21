@@ -1,9 +1,22 @@
-<p>Please select a location</p>
+<!DOCTYPE html>
+<html>
 
-<div>
-	<ul>
-	<% @locations.each do |location| %>
-	<%= link_to location.name, location_path(location) %>
-	<% end %>
-	</ul>
-</div>
+  <head>
+    <title>JHK TKD</title>
+  </head>
+
+  <div id="wrapper">
+    <body>
+    <h3>Select a location</h3>
+      <div>
+        <nav>
+        <ul id="main">
+          <% @locations.each do |location| %>
+            <li><%= link_to location.name, location_path(location), class: "mainbutton" %></li>
+          <% end %>
+        </ul>
+        </nav>
+      </div>
+    </body>
+  </div>
+</html>

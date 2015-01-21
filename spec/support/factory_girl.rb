@@ -1,5 +1,5 @@
 require 'factory_girl'
-	
+
 FactoryGirl.define do
   factory :user do
     sequence(:email) { |n| "user#{n}@example.com" }
@@ -7,6 +7,7 @@ FactoryGirl.define do
   end
 
 	factory :location do
+    sequence(:name) {|n| "Name #{n}" }
 		sequence(:city) { |n| "City #{n}" }
 		sequence(:state) { |n| "State #{n}" }
 		country "USA"

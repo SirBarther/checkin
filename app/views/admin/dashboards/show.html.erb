@@ -1,5 +1,15 @@
-<h1> admin/show </h1>
-<ul>
-<li><%= link_to "Create a new student", new_admin_student_path %></li>
-<li><%= link_to "View all students", admin_students_path %></li>
-<li><%= link_to "View or edit locations", admin_locations_path %></li>
+<!DOCTYPE html>
+<html>
+  <div id="wrapper">
+    <body>
+      <h3 id="main">Select an action</h3>
+      <nav>
+        <ul id="main">
+          <li><%= link_to "New Student", new_admin_student_path, class: "mainbutton" %></li>
+          <li><%= link_to "All Students", admin_students_path, class: "mainbutton" %></li>
+          <li><%= link_to "Locations", admin_locations_path, class: "mainbutton" %></li>
+        </ul>
+      </nav>
+    </body>
+  </div>
+</html>

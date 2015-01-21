@@ -21,9 +21,8 @@ class Event < ActiveRecord::Base
 
   def self.list
     @student_array = []
-    Event.limit(5).order(:created_at).each do |list|
+    Event.limit(5).order(created_at: :desc).each do |list|
       @student_array << Student.find_by_tag(list.student_tag)
-      # @student_array << list.student
     end
     @student_array
   end

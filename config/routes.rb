@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/", to: "dashboards#show"
-    resources :users, only: [:index, :show]
-    resources :students, only: [:index, :show, :new, :create, :update, :destroy]
-    resources :locations, only: [:index, :show, :new, :create, :destroy]
+    resources :users
+    resources :students
+    resources :locations
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

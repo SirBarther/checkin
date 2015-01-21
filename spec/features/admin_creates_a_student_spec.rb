@@ -40,7 +40,7 @@ feature "Administrator creates a Student", %Q{
 
 			click_on "Admin"
 
-			click_on "Create a new student"
+			click_on "New Student"
 
 			expect(page).to have_content "First Name"
 			expect(page).to have_content "Last Name"
@@ -56,14 +56,14 @@ feature "Administrator creates a Student", %Q{
 		end
 
 
-		scenario "Admin unsuccessfully creates a new user" do 
+		scenario "Admin unsuccessfully creates a new user" do
 			student = FactoryGirl.build(:student)
 
 			visit root_path
 
 			click_on "Admin"
 
-			click_on "Create a new student"
+			click_on "New Student"
 
 			expect(page).to have_content "First Name"
 			expect(page).to have_content "Last Name"

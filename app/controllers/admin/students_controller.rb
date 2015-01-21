@@ -1,13 +1,6 @@
 module Admin
   class StudentsController < ApplicationController
-  	before_filter :authenticate_user!
-    before_filter do
-      if !current_user
-        flash[:error] = "You are not authorized to view that page"
-        render "dashboards/index"
-      end
-    end
-
+    before_filter :authenticate_user!
     def show
       @student = Student.find(params[:id])
     end
@@ -24,12 +17,13 @@ module Admin
     end
 
     def index
-      @students = Student.all
-      # @searched_students = Student.search(params[:search])
+      @students = Student.all.page params[:page]
       if params[:search]
-        @searched_students = Student.search(params[:search]).order("created_at DESC")
+        @searched_students =
+        Student.search(params[:search]).order("created_at DESC").page params[:page]
       else
-        @searched_students = Student.order("created_at DESC")
+        @searched_students =
+        Student.order("created_at DESC").page params[:page]
       end
     end
 

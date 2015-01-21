@@ -4,7 +4,7 @@
     <body>
       <h3 id="main">Select a location</h3>
         <ul id="main">
-        <%= form_for @new_location, url: admin_locations_path(@new_location) do |f| %>
+        <%= form_for @location, url: admin_location_path(@location) do |f| %>
           <div>
             <%= f.label :name, "Location Name" %>
             <%= f.text_field :name %>
@@ -27,15 +27,15 @@
         <% end %>
       </ul>
 
-      <% if @new_location.errors.any? %>
-      	<div id="error_explanation">
+      <% if @location.errors.any? %>
+        <div id="error_explanation">
         <h5> The following errors(s) occurred: </h5>
-      	<ul>
-      	<% @new_location.errors.full_messages.each do |msg| %>
-      		<li><%= msg %></li>
-      	<% end %>
-      	</ul>
-      	</div>
+        <ul>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
       <% end %>
     </body>
   </div>

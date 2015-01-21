@@ -1,25 +1,15 @@
-<p> Welcome to <%= @location.name %>! Please sign in </p>
-
-<div>
-	<%= form_for ([@location, @event]) do |f| %>
-	  <%= f.label :student_tag, "Tag Number" %>
-	  <%= f.text_field :student_tag, autofocus: :true %>
-		<%= f.submit "Check In" %>
-	<% end %>
-</div>
-
-<div id="error_explanation">
-<% if @event.errors.any? %>
-<h4><%= pluralize(@event.errors.count, "error") %>: Please review </h4>
-<ul>
-  <% @event.errors.full_messages.each do |message| %>
-  <li> <%= message %> </li>
-  <% end %>
-</ul>
-<% end %>
-</div>
-
-<% Event.list.each do |student| %>
-		<%= student.f_name %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <div id="wrapper">
+    <body>
+      <h3 id="main">Location</h3>
+        <ul id="main">
+          <li> Name: <%= @location.name %> </li>
+          <li> City: <%= @location.city %> </li>
+          <li> State: <%= @location.state %> </li>
+          <li> Country: <%= @location.country %> </li>
+          <%= link_to "Edit", edit_admin_location_path %>
+    </body>
+  </div>
+</html>
 

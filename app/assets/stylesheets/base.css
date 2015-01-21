@@ -1,3 +1,229 @@
+/***********************
+Universal
+***********************/
+
 body {
-  background-color: #0000E6;
+  background-color: #0066FF;
 }
+
+a li {
+  text-decoration: none;
+}
+
+#logo {
+  margin: 0;
+  padding: 0;
+
+}
+
+#generic {
+  color: #FFF;
+}
+
+#generic a {
+  color: #FFF;
+}
+
+#generic a:hover {
+  color: #000;
+}
+
+/***********************
+Body wrapper
+***********************/
+#wrapper {
+  background-color: #70C6FF;
+  max-width: 100%;
+  height: 80%;
+  text-decoration: none;
+  text-align: center;
+  padding: 2.5%;
+}
+
+/***********************
+Main settings
+***********************/
+
+/* Locations Buttons LI */
+#main li a {
+  background-color: #FFF;
+  list-style: none;
+}
+
+/* Main Button Class for locations */
+.mainbutton {
+    display: block;
+    height: 50px;
+    width: 150px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 1px 0 #1b383b;
+    color: #000;
+    /* text-shadow: 0 1px 1px #555;*/
+}
+
+/***********************
+Top Bar area
+***********************/
+#welcome {
+  text-align: center;
+  color: white;
+  margin-top: 1%;
+  font-weight: 900;
+}
+
+.flash-notice {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+}
+
+.flash {
+  color: black;
+}
+
+
+/***********************
+Navigation
+***********************/
+nav ul {
+  list-style: none;
+  display: inline-block;
+  /*margin: 5% 5%;*/
+
+}
+
+nav a {
+  padding: 5px 5px;
+}
+
+/***********************
+Forms
+***********************/
+
+.new_student {
+  display: block;
+  max-width: 50%;
+  text-align: left;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search {
+  display: block;
+  max-width: 50%;
+  text-align: left;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new_event {
+  display: inline-block;
+  max-width: 50%;
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new_location {
+  display: block;
+  max-width: 50%;
+  text-align: left;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit_student {
+  display: block;
+  max-width: 50%;
+  text-align: left;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/***********************
+Checkins Section
+***********************/
+#checkins {
+  display: block;
+  color: white;
+  background-color: #70C6FF;
+  max-width: 52%;
+  margin: 5px auto;
+
+}
+
+#checkins_list ul {
+  margin-left: 0 0 0 0px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+#checkins_list li {
+  display: block;
+  text-decoration: none;
+  list-style: none;
+  background-color: #333333;
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+/***********************
+Devise
+***********************/
+.new_user {
+  display: block;
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  max-width: 80%;
+}
+
+.field label {
+  color: white;
+}
+
+/***********************
+Headlines
+***********************/
+h1, h1:visited {
+  color: #FFF;
+}
+
+h2, h2:visited {
+  color: #EEE;
+}
+
+h3, h3:visited {
+  color: #DDD;
+}
+
+img {
+  max-width: 100%;
+}
+
+#h2_left {
+  text-align: left;
+  margin: 0 3%;
+}
+
+#h2_cen {
+  text-align: center;
+}
+
+#h3_cen {
+  text-align: center;
+}
+
+
+

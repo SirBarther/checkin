@@ -1,19 +1,22 @@
-<h1>Student Search</h1>
-
-<%# binding.pry %>
-
-<% @students.each do |list| %>
-  <%= list.f_name %>
-<% end %>
-
-
-<%= form_tag admin_students_path, method: 'get' do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search" %>
-<% end %>
-
-<% @searched_students.each do |student| %>
-  <div>
-    <h4><%= link_to student.f_name, admin_student_path(student) %></h4>
+<!DOCTYPE html>
+<html>
+  <div id="wrapper">
+    <body>
+      <%= form_tag admin_students_path, class: "search", method: 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search" %>
+      <% end %>
+      <h3> Students:</h3>
+      <div id="generic">
+        <% @searched_students.each do |student| %>
+          <h4><%= link_to student.f_name, admin_student_path(student) %>
+              <%= link_to student.l_name, admin_student_path(student) %>
+          </h4>
+        <% end %>
+      </div>
+    <div>
+      <%= paginate @students %>
+    </div>
+    </body>
   </div>
-<% end %>
+</html>

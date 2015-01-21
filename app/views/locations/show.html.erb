@@ -1,25 +1,45 @@
-<p> Welcome to <%= @location.name %>! Please sign in </p>
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- <script src="/js/vendor/modernizr.js"></script> -->
+  </head>
+  <body>
+    <p id ="welcome"> Welcome to <%= @location.name %>! Please sign in </p>
+    <div id="wrapper">
+      <div>
+      	<%= form_for ([@location, @event]) do |f| %>
+      	  <%= f.label :student_tag, "Tag Number" %>
+      	  <%= f.text_field :student_tag, autofocus: :true %>
+      		<%= f.submit "Check In" %>
+      	<% end %>
+      </div>
 
-<div>
-	<%= form_for ([@location, @event]) do |f| %>
-	  <%= f.label :student_tag, "Tag Number" %>
-	  <%= f.text_field :student_tag, autofocus: :true %>
-		<%= f.submit "Check In" %>
-	<% end %>
-</div>
+      <div id="error_explanation">
+        <% if @event.errors.any? %>
+          <h4><%= pluralize(@event.errors.count, "error") %>: Please review </h4>
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+              <li> <%= message %> </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <br>
+      <h3 id="h3_cen"> Recent checkins </h3>
+      <div id="checkins">
+        <ul id="checkins_list">
+          <% Event.list.each do |student| %>
+          	<li><%= student.f_name %> <%= student.l_name%> checked in at <%= student.updated_at %></li>
+          <% end %>
+        </ul>
+      </div>
 
-<div id="error_explanation">
-<% if @event.errors.any? %>
-<h4><%= pluralize(@event.errors.count, "error") %>: Please review </h4>
-<ul>
-  <% @event.errors.full_messages.each do |message| %>
-  <li> <%= message %> </li>
-  <% end %>
-</ul>
-<% end %>
-</div>
+    </div>
 
-<% Event.list.each do |student| %>
-		<%= student.f_name %>
-<% end %>
-
+<!--     <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/fastclick.js"></script>
+    <script>
+      $(document).foundation();
+    </script> -->
+  </body>
+</html>
