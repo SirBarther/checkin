@@ -1,17 +1,20 @@
-<!DOCTYPE html>
 <div id="wrapper">
-  <body>
-    <h3 id="main">Location</h3>
-      <div>
+  <h3 id="main">Location Details</h3>
+    <div class= "row">
+      <div class= "large-6 columns">
         <ul id="location">
           <li> Name: <%= @location.name %> </li>
           <li> City: <%= @location.city %> </li>
           <li> State: <%= @location.state %> </li>
           <li> Country: <%= @location.country %> </li>
-          <%= link_to "Edit", edit_admin_location_path %>
         </ul>
       </div>
-  </body>
+    </div>
 </div>
 
-
+<div class= "bottom_row">
+  <ul id="bottom_row">
+    <li><%= link_to "Back", :back, class: "mainbutton" %></li>
+    <li><%= link_to "Edit", edit_admin_location_path, class: "mainbutton" %></li>
+  </ul>
+</div>

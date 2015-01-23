@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-  <div id="wrapper">
-    <body>
-      <h3 id="main">Select a location</h3>
-      <nav>
-        <ul id="main">
-          <div>
-        	<% @locations.each do |location| %>
-          	<%= link_to location.name, admin_location_path(location), class: "mainbutton" %>
-        	<% end %>
-        	</ul>
-          </div>
-      </ul>
-      </nav>
-    </body>
-<%= link_to "New Location", new_admin_location_path, class: "mainbutton" %>
+<div id="wrapper">
+  <h3 id="main">Select a location</h3>
+  <nav>
+    <ul id="main">
+      <div>
+    	<% @locations.each do |location| %>
+      	<%= link_to location.name, admin_location_path(location), class: "mainbutton" %>
+    	<% end %>
+    	</ul>
+      </div>
+  </ul>
+  </nav>
+
+  <div class="bottom_row">
+    <ul id="bottom_row">
+      <li><%= link_to "Back", :back, class: "mainbutton" %></li>
+      <li><%= link_to "New", new_admin_location_path, class: "mainbutton" %></li>
+    </ul>
+  </div>
+
+</div>

@@ -1,38 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <div id="wrapper">
-    <%= form_for @new_student, url: admin_students_path(@new_student) do |f| %>
-      <div>
+<div id="wrapper">
+  <%= form_for @new_student, url: admin_students_path(@new_student) do |f| %>
+    <div>
       <%= f.label :f_name, "First Name" %>
       <%= f.text_field :f_name %>
-      </div>
+    </div>
 
-      <div>
+    <div>
       <%= f.label :l_name, "Last Name" %>
       <%= f.text_field :l_name %>
-      </div>
+    </div>
 
-      <div>
+    <div>
       <%= f.label :tag, "Tag Number" %>
       <%= f.text_field :tag %>
-      </div>
+    </div>
 
-      <div>
+    <div>
       <%= f.submit "Submit"%>
-      </div>
+    </div>
+  <% end %>
 
-    <% end %>
-
-    <div id="error_explanation">
+  <div id="error_explanation">
     <% if @new_student.errors.any? %>
       <h5> The following errors(s) occurred: </h5>
       <ul>
-      <% @new_student.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @new_student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
-      </div>
     <% end %>
   </div>
-</html>
+</div>
+
+<div class="bottom_row">
+  <ul id="bottom_row">
+    <li><%= link_to "Back", :back, class: "mainbutton" %></li>
+  </ul>
+</div>
+
+
+
+
 

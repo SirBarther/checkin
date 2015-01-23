@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <title>JHK TKD</title>
-  </head>
-
-  <div id="wrapper">
-    <body>
-    <h3>Select a location</h3>
-      <div>
-        <nav>
-        <ul id="main">
-          <% @locations.each do |location| %>
-            <li><%= link_to location.name, location_path(location), class: "mainbutton" %></li>
-          <% end %>
-        </ul>
-        </nav>
-      </div>
-    </body>
+<div id="wrapper">
+  <h3>Select a location</h3>
+  <div>
+    <nav>
+      <ul id="main">
+        <% @locations.each do |location| %>
+          <li><%= link_to location.name, location_path(location),
+                class: "mainbutton" %></li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-</html>
+</div>

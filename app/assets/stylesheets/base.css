@@ -100,6 +100,20 @@ nav a {
 }
 
 /***********************
+Bottom NAV
+***********************/
+.bottom_row {
+
+}
+
+#bottom_row li {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  font-size: 25px;
+}
+
+/***********************
 Forms
 ***********************/
 
@@ -190,18 +204,20 @@ Checkins Section
 Locations
 ***********************/
 #location {
-  color: white;
+  color: black;
 
 }
 
 #location ul {
-  text-align: center;
+  color: black;
 }
 
 #location li {
   color: white;
   list-style: none;
   margin-left: -1.1rem;
+  text-align: left;
+  margin: 10px;
 }
 
 /***********************
@@ -250,6 +266,3 @@ img {
 #h3_cen {
   text-align: center;
 }
-
-
-

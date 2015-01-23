@@ -11,11 +11,11 @@ class EventsController < ApplicationController
 			else
 				flash[:notice] = "Please try again"
 				render "locations/show"
-			end	
+			end
 		else
 			flash[:notice] = "The provided ID doesn't exist or is blank. Please register"
 			redirect_to :back
-		end	
+		end
 	end
 
 	private
@@ -24,3 +24,4 @@ class EventsController < ApplicationController
 		params.require(:event).permit(:student_tag)
 	end
 end
+

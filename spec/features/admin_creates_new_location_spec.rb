@@ -36,7 +36,7 @@ feature "Administrator creates a new location", %Q{
 
 			click_on "Locations"
 
-			click_on "New Location"
+			click_on "New"
 
 			fill_in "City", with: location.city
 			fill_in "State", with: location.state
